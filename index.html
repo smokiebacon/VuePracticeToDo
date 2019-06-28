@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -20,9 +26,9 @@
         </form>
         <ul>
             <li v-for="todo in toDos">
-                <input type="checkbox" :checked="toDos.done">
-                <!-- with a colon, : binds it. check for real value-->
-                <span>{{todo.title}}</span>
+                <input type="checkbox" v-model="todo.done"></input>
+                <span :class="{ done: todo.done } ">{{todo.title}}</span>
+                <button @click="deleteToDo(todo)">Delete</button>
             </li>
             <!-- loop through the array with v-for -->
         </ul>
