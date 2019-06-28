@@ -19,7 +19,11 @@
             <button type="submit" name="button">Add</button>
         </form>
         <ul>
-            <li v-for="todo in toDos">{{todo.title}}</li>
+            <li v-for="todo in toDos">
+                <input type="checkbox" :checked="toDos.done">
+                <!-- with a colon, : binds it. check for real value-->
+                <span>{{todo.title}}</span>
+            </li>
             <!-- loop through the array with v-for -->
         </ul>
     </main>

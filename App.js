@@ -12,6 +12,7 @@ const app = new Vue({
                 title: this.newToDo,
                 done: false
             })
+            this.newToDo = '';
         }
     }
 })
