@@ -24,6 +24,8 @@
             <input v-model="newToDo" type="text" name="newToDo" id="newToDo">
             <button type="submit" name="button">Add</button>
         </form>
+        <button v-if="toDos.length > 1" @click="allDone">Mark All as Done</button>
+
         <ul>
             <li v-for="todo in toDos">
                 <input type="checkbox" v-model="todo.done"></input>

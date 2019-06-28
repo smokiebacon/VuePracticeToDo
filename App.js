@@ -17,6 +17,11 @@ const app = new Vue({
         deleteToDo(todo) {
             const todoIndex = this.toDos.indexOf(todo);
             this.toDos.splice(todoIndex, 1);
+        },
+        allDone() {
+            this.toDos.forEach(todo => {
+                todo.done = true
+            })
         }
     }
 })
